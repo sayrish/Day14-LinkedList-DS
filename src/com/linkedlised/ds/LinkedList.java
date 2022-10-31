@@ -85,7 +85,26 @@ public class LinkedList {
 			}
 			temp.next= null;
 		}
+		 
 	}
+			public Object searhElement(Object input)
+			{
+				
+			Node temp = head;
+			int index = 0;
+			while(temp != null)
+			{
+				index++;
+				if(temp.data == input)
+				{
+					String result = temp.data+" element found at index " +index;
+					return result;
+				}
+				temp = temp.next;
+			}
+			return null;
+		}
+	
 	
 
 	public static void main(String[] args) {
@@ -97,6 +116,14 @@ public class LinkedList {
 		list.display();
 		list.addLast(70);
 		list.display();
+		list.addFirst(127);
+		list.display();
+		list.addFirst(65);
+		list.display();
+		list.addFirst(599);
+		list.display();
+		list.addFirst(20);
+		list.display();
 		
 		System.out.println("Enter Position Number To Add:- ");
 		int position =sc.nextInt();
@@ -107,9 +134,13 @@ public class LinkedList {
 		list.display();
 		list.deleteFirst();
 		list.display();
+		System.out.println();
+		System.out.println("enter Element Number To Search: ");
+		int input = sc.nextInt();
+		System.out.println(list.searhElement(input));
+
 		
 	}
-
 
 	
 }
